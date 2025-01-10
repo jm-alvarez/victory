@@ -63,7 +63,7 @@
                                     $j_query = $mysqli->query("SELECT * FROM participants_tbl WHERE uid='$uid' AND eid='$event_id'");
                                     $j_fetch = $j_query->fetch_assoc();
 
-                                        if($j_fetch->num_rows == 0){
+                                        if($j_query->num_rows == 0){
                                             ?>
                                             <form method="POST">
                                                 <button class="btn-join" name="pre-register-<?=$event_id;?>">Pre-Register</button>
@@ -77,10 +77,10 @@
                                         } else {
                                             ?>
                                             <form method="POST">
-                                                <button class="btn-join" name="pre-register-<?=$event_id;?>">Unregister</button>
+                                                <button class="btn-unreg" name="unregister-<?=$event_id;?>">Unregister</button>
                                                 <?php
-                                                    if(isset($_POST['pre-register-'.$event_id])){
-                                                        $mysqli->query("INSERT INTO participants_tbl SET uid='$uid', eid='$event_id'");
+                                                    if(isset($_POST['unregister-'.$event_id])){
+                                                        $mysqli->query("DELETE FROM participants_tbl WHERE uid='$uid' AND eid='$event_id'");
                                                     }
                                                 ?>
                                             </form>

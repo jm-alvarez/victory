@@ -1102,6 +1102,28 @@ body {
                 .btn-join:active {
                     transform: scale(.9);
                 }
+
+                .btn-unreg {
+                    width: 400px;
+                    max-width: 90%;
+                    height: 50px;
+                    color: red;
+                    font-weight: bold;
+                    font-size: 18px;
+                    border: 2px solid red;
+                    background-color: rgba(0, 0, 0, .1);
+                    border-radius: 10px;
+                }
+
+                .btn-unreg:hover {
+                    background-color: red;
+                    color: #fff;
+                    cursor: pointer;
+                }
+
+                .btn-unreg:active {
+                    transform: scale(.9);
+                }
             }
 
         }
