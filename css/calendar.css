@@ -1,0 +1,90 @@
+:root {
+    --logo-color: #02458d;
+    --logo-color-50: #02458dd2;
+    --secondary: #d1d1d1;
+    --card-width: 290px;
+}
+
+* {
+    font-family: 'Montserrat';
+}
+
+.calendar {
+    display: flex;
+    flex-flow: column;
+}
+.calendar .header .month-year {
+    font-size: 20px;
+    font-weight: bold;
+    color: #000;
+    padding: 20px 20px;
+}
+.calendar .days {
+    display: flex;
+    flex-flow: wrap;
+}
+.calendar .days .day-name {
+    width: calc(100% / 7);
+    border-right: 1px solid var(--logo-color);
+    padding: 20px;
+    text-transform: uppercase;
+    font-size: 12px;
+    font-weight: bold;
+    color: #818589;
+    color: #fff;
+    background-color: var(--logo-color);
+}
+.calendar .days .day-name:nth-child(7) {
+    border: none;
+}
+.calendar .days .day-num {
+    display: flex;
+    flex-flow: column;
+    width: calc(100% / 7);
+    border-right: 1px solid #e6e9ea;
+    border-bottom: 1px solid #e6e9ea;
+    padding: 15px;
+    font-weight: bold;
+    color: #000;
+    cursor: pointer;
+    min-height: 100px;
+}
+.calendar .days .day-num span {
+    display: inline-flex;
+    width: 30px;
+    font-size: 14px;
+}
+.calendar .days .day-num .event {
+    margin-top: 10px;
+    font-weight: 500;
+    font-size: 14px;
+    padding: 3px 6px;
+    border-radius: 4px;
+    background-color: #f7c30d;
+    color: #fff;
+    word-wrap: break-word;
+}
+.calendar .days .day-num .event.green {
+    background-color: #51ce57;
+}
+.calendar .days .day-num .event.blue {
+    background-color: var(--logo-color);
+}
+.calendar .days .day-num .event.red {
+    background-color: #ce5151;
+}
+.calendar .days .day-num:nth-child(7n+1) {
+    border-left: 1px solid #e6e9ea;
+}
+.calendar .days .day-num:hover {
+    background-color: #fdfdfd;
+}
+.calendar .days .day-num.ignore {
+    background-color: #fdfdfd;
+    color: #ced2d4;
+    cursor: inherit;
+}
+.calendar .days .day-num.selected {
+    background-color: #eee;
+    cursor: inherit;
+}

@@ -1,0 +1,336 @@
+:root {
+    --logo-color: #02458d;
+    --logo-color-50: #02458dd2;
+    --secondary: #d1d1d1;
+    --card-width: 290px;
+}
+
+* {
+    font-family: 'Montserrat';
+    font-size: 12px;
+    list-style: none;
+    text-decoration: none;
+    left: 0; right: 0; top: 0;
+    transition: all ease .3s;
+    scroll-behavior: smooth;
+    border-style: none;
+    border: 0;
+    margin: 0;
+    padding: 0;
+}
+
+::-webkit-scrollbar {
+    display: none;
+}
+
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    height: 100vh;
+    width: 100vw;
+    background-color: #fff;
+    font-weight: bold;
+}
+
+.edit-volunteer-container {
+    border: 1px solid rgba(0, 0, 0, .5);
+    display: flex;
+    flex-direction: column;
+    border-radius: 20px;
+    overflow: hidden;
+    
+}
+
+header {
+    width: 100%;
+    height: 70px;
+    background-color: var(--logo-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: #fff;
+    margin-bottom: 20px;
+
+    h2 {
+        font-size: 18px;
+    }
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    row-gap: 20px;
+    padding: 20px;
+}
+
+.form-row-1 {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    
+}
+
+.tb {
+    border: 1px solid rgba(0, 0, 0, .5);
+    padding: 8px 12px;
+    border-radius: 6px;
+    height: 20px;
+}
+
+#profile-pic {
+    display: none;
+}
+.col-1 {
+    display: flex;
+    flex-direction: column;
+    row-gap: 20px;
+
+    .row-1 {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        column-gap: 10px;
+    }
+}
+
+.add-profile {
+    position: relative;
+    display: flex;
+    margin-right: 30px;margin-left: 200px;
+    margin-top: -20px;
+
+    p {
+        position: absolute;
+        font-weight: lighter;
+        font-size: 15px;
+        width: 150px;
+        text-align: center;
+        top: 80px; left: -30px;
+        background-color: #eee;
+        border-radius: 6px;
+        text-shadow: 0em -.1em 1em #fff
+    }
+    /* div {
+        content: '';
+        aspect-ratio: 1 / 1;
+        background-image: url("../icons/add-user.png");
+        background-position: center;
+        background-size: contain;
+        background-repeat: no-repeat;
+        border-radius: 50%;
+        height: 100px;
+        border: 8px solid #000;
+        
+    } */
+
+    .add-pic {
+        aspect-ratio: 1 / 1;
+        height: 80px;
+        border-radius: 50%;
+        border: 1px solid #000;
+        padding: 5px;
+    }
+
+    .img {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        background-color: #eee;
+        border-radius: 50%;
+    }
+}
+
+.add-profile:hover {
+    cursor: pointer;
+}
+
+
+
+.tb-container {
+    position: relative;
+
+}
+
+.lbl {
+    position: absolute;
+    font-size: 10px;
+    padding: 0;
+    margin: 0;
+    width: 40%;
+    text-align: center;
+    font-weight: lighter;
+    background-color: #fff;
+    top: -5px;
+    left: 10px;
+}
+
+.lbl-email {
+    width: 10%;
+}
+
+.row-2 {
+    display: flex;
+    flex-direction: row;
+    column-gap: 10px;
+    
+    #address {
+        width: 200%;
+    }
+}
+
+.form-row-2 {
+
+
+    .row-1 {
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-start;
+        align-items: center;
+        column-gap: 10px;
+    }
+
+    .tb {
+        width: 200px;
+    }
+
+    .lbl-re-enter-password {
+        width: 50%;
+    }
+}
+
+.form-row-3 {
+
+    .row-1 {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        width: 700px;
+        height: 60px;
+        column-gap: 10px;
+
+    }
+
+    .usertype-container{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        column-gap: 10px;
+        width: 200px;
+        height: 20px;
+        border: 1px solid rgba(0, 0, 0, .5);
+        border-radius: 8px;
+        padding: 10px;
+
+        .lbl-usertype {
+            width: 50px;
+        }
+
+        .lbl-user, .lbl-admin {
+            font-size: 15px;
+            font-weight: lighter;
+        }
+    }
+
+    .role-container {
+        border: 1px solid rgba(0, 0, 0, .5);
+        display: flex;
+        padding: 5px;
+        border-radius: 8px;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        column-gap: 10px;
+        width: 200px;
+        height: 30px;
+    }
+
+    .status-container {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        column-gap: px;
+        width: 250px;
+        height: 20px;
+        border: 1px solid rgba(0, 0, 0, .5);
+        border-radius: 8px;
+        padding: 10px;
+        column-gap: 10px;
+        .lbl-status {
+            width: 40%;
+        }
+
+        .lbl-active, .lbl-inactive {
+            font-size: 15px;
+            font-weight: lighter;
+        }
+    }
+
+    .hours-container {
+        .tb {
+            width: 110px;
+            height: 25px;
+        }
+        .lbl-hours {
+            width: 100px;
+        }
+    }
+}
+
+.form-row-4 {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    column-gap: 10px;
+
+    .lbl-bio {
+        width: 5%;
+    }
+
+    .tb-bio {
+        width:400px;
+        height: 120px;
+    }
+
+    .btn-container {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        row-gap: 20px;
+    }
+
+    .btn {
+        padding: 10px 50px;
+        width: 250px;
+        border-radius: 10px;
+        background-color: transparent;
+        color: var(--logo-color);
+        border: 2px solid var(--logo-color);
+        font-weight: bold;
+    }
+
+    .btn:active {
+        transform: scale(.9);
+    }
+
+    .btn-add-volunteer:hover {
+        cursor: pointer;
+        background-color: var(--logo-color);
+        color: #fff;
+    }
+
+    .btn-clear:hover {
+        cursor: pointer;
+        background-color: red;
+        border-color: red;
+        color: #fff;
+    }
+}
