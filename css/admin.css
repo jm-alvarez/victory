@@ -1391,6 +1391,34 @@ nav {
             }
         }
 
+        .donations-chart-container {
+            overflow: hidden;
+
+            .donation-header {
+                width: 100%;
+                background-color: var(--logo-color);
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                padding: 0px 20px;
+                .btn-print-donation {
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    margin-right: 40px;
+                    
+                    border-radius: 10px;
+                    border: 1px solid #fff;
+                    color: #fff;
+
+                    svg {
+                        fill: #fff;
+                    }
+                    
+                }
+            }
+        }
+
         .f-container {
             display: flex;
             flex-direction: column;

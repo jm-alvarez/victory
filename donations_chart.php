@@ -6,20 +6,7 @@
     while($f_donate=$q_donate->fetch_assoc()){
         
     }
-                        for($i=1; $i <=12; $i++){
-                            $yearNow = date("Y");
-                            $q_month[$i] = $mysqli->query("SELECT donation_amount FROM donations_tbl WHERE year='$yearNow' AND month='$i'");
-                            if($q_month[$i]){
-                                $month[$i] = 0;
-                                $amount[$i] = 0;
-                                 while($f_month[$i] = $q_month[$i]->fetch_assoc()){
-                                    $month[$i]++;
-                                    $amount[$i]=$f_month[$i]['donation_amount'];
-                                }
-                                $amount[$i];
-                            }
-                            echo "'".$amount[$i]."'".",";
-                        }
+
                         
 ?>
 <!DOCTYPE html>
@@ -46,20 +33,16 @@
                 // data: [1000, 2500, 500, 6000, 2000, 1250, 3690, 2400, 6800, 9000, 5400, 2500],
                 data: [
                     <?php
-                        for($i=1; $i <=12; $i++){
-                            $yearNow = date("Y");
-                            $q_month[$i] = $mysqli->query("SELECT donation_amount FROM donations_tbl WHERE year='$yearNow' AND month='$i'");
-                            if($q_month[$i]){
-                                $month[$i] = 0;
-                                $amount[$i] = 0;
-                                 while($f_month[$i] = $q_month[$i]->fetch_assoc()){
-                                    $month[$i]++;
-                                    $amount[$i]=$f_month[$i]['donation_amount'];
+                                for($j=1; $j <= 12; $j++){
+                                    $yearNow = date("Y");
+                                    $q_month[$j] = $mysqli->query("SELECT * FROM donations_tbl WHERE year='$yearNow' AND month='$j'");
+                                    $donation_amount=0;
+                                    while($a = $q_month[$j]->fetch_assoc()){
+                                        $donation_amount += $a['donation_amount'];
+                                        
+                                    }
+                                    echo "'". $donation_amount."',";
                                 }
-                                $amount[$i];
-                            }
-                            echo "'".$amount[$i]."'".",";
-                        }
                         ?>
                 ],
             }],
