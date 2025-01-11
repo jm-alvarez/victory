@@ -113,7 +113,7 @@
     <!-- <div class="line-div"></div> -->
 
     <section id="donations">
-            <button type="button" class="btn btn-donate" id="donate">Donate Now</button>
+            <a href="donation.php" class="btn btn-donate" id="donate">Donate Now</a>
     </section>
 
     <!-- <div class="line-div"></div> -->

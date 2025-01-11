@@ -104,7 +104,7 @@
                                             <?php
                                     }
                     } else if(empty($profile_pic)){
-                        $q_add = $mysqli->query("UPDATE users_tbl SET username='$username', password='$password', ufname='$fname', ulname='$lname', mi='$mi.', email='$email', address='$address', bio='$bio', usertype='$usertype' WHERE uid='$id'") and $mysqli->query("UPDATE volunteers_tbl SET vrole='$role', vstatus='$status', vhours='$vhours' WHERE uid='$id'");
+                        $q_add = $mysqli->query("UPDATE users_tbl SET username='$username', password='$password', ufname='$fname', ulname='$lname', mi='$mi.', email='$email', address='$address', bio='$bio' WHERE uid='$id'");
                         if(!$q_add){
                             echo $mysqli->error;
                             exit();

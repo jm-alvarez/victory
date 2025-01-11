@@ -1,0 +1,125 @@
+:root {
+    --logo-color: #02458d;
+    --logo-color-50: #02458dd2;
+    --secondary: #d1d1d1;
+}
+
+* {
+    font-family: 'Montserrat';
+    list-style: none;
+    text-decoration: none;
+    /* left: 0; right: 0; top: 0; */
+    transition: all ease .3s;
+    scroll-behavior: smooth;
+    border-style: none;
+    border: 0;
+    margin: 0;
+}
+
+::-webkit-scrollbar {
+    width: 0;
+}
+
+body {
+    background-color: #fff;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100vw;
+    height: 100vh;
+    overflow-x: hidden;
+    overflow-y: scroll;
+    gap: 10px;
+
+    h1 {
+        width: 100%;
+        height: 50px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: var(--logo-color);
+        color: #fff;
+        font-size: 20px;
+        margin-bottom: 20px;
+    }
+
+    .pl-head {
+        border-bottom: 1px solid #000;border-top: 1px solid #000;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 10px;
+        background-color: #fff;
+
+        span {
+            font-size: 18px;
+            font-weight: bold;
+        }
+
+    }
+
+    .participant-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        gap: 10px;
+
+        .p-card {
+            display: flex;
+            width: 90%;
+            background-color: #eee;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 5px;
+            padding: 15px 20px;
+            border-radius: 10px;
+            border: 1px solid rgba(0,0,0,.5);
+        }
+    }
+
+    nav {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 200px;
+        position: fixed;
+        bottom: 20px;
+
+        .pagination {
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            gap: 10px;
+            
+            .page-item {
+                background-color: transparent;
+                padding: 5px;
+                border-radius: 5px;
+                color: #000;
+                font-weight: 400;
+                
+                .page-link{
+                    color: #000;
+                }
+            }
+
+           .page-item:hover {
+            background-color: var(--logo-color);
+            
+            .page-link {
+                color: #fff;
+                
+            }
+            }
+        }
+        
+    }
+}

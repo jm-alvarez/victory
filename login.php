@@ -175,7 +175,13 @@
                                                             </script>
                                                         <?php
                                                     } else {
-                                                        $q_vol = $mysqli->query("INSERT INTO volunteers_tbl SET vrole='Member', vstatus='Inactive', vhours='0', uid = (SELECT uid FROM users_tbl WHERE username = '$r_username')");
+                                                        $ynow = date("Y");
+                                                        $m = date("m");
+                                                        $d = date("d");
+                                                        $dnow = ltrim($d, '0');
+                                                        $mnow = ltrim($m, '0');
+
+                                                        $q_vol = $mysqli->query("INSERT INTO volunteers_tbl SET vrole='Member', vstatus='Inactive', vhours='0', uid = (SELECT uid FROM users_tbl WHERE username = '$r_username'), reg_year='$ynow', reg_month='$mnow', reg_day='$dnow'");
                                                         
                                                         if($q_vol){
                                                             $u_fetch = $mysqli->query("SELECT uid FROM users_tbl WHERE username = '$r_username'");
@@ -188,7 +194,7 @@
 
                                                             ?>
                                                                 <script>
-                                                                    alert("Account created succssfully.");
+                                                                    alert("Account created successfully.");
                                                                     window.location = "index.php";
                                                                 </script>
                                                             <?php
