@@ -68,7 +68,7 @@
         <div class="form-row-3">
             <div class="row row-1">
                 <div class="tb-container usertype-container">
-                    <label for="usertype" class="lbl lbl-usertype">User Type</label><div><input type="radio" name="usertype" id="user" value="user" <?php if($q_fetch['usertype'] == 'user'){ echo "checked"; } ?>><label for="user" class="lbl-user">User</label></div><div><input type="radio" name="usertype" value="admin" id="admin"  <?php if($q_fetch['usertype'] == 'admin'){ echo "checked"; } ?>><label for="admin" class="lbl-admin">Admin</label></div>
+                    <label for="usertype" class="lbl lbl-usertype">User Type</label><div><input type="radio" name="usertype" id="user" value="user" checked><label for="user" class="lbl-user">User</label></div><div><input type="radio" name="usertype" value="admin" id="admin"><label for="admin" class="lbl-admin">Admin</label></div>
                 </div>
 
                 <div class="tb-container role-container">
@@ -80,7 +80,7 @@
                         </select>
                 </div>
                 <div class="tb-container status-container">
-                    <label for="status" class="lbl lbl-status">Status</label><div><input type="radio" name="status" id="active" value="Active"  <?php if($q_fetch['vstatus'] == 'Active'){ echo "checked"; } ?>><label for="active" class="lbl-active">Active</label></div><div><input type="radio" name="status" value="Inactive" id="inactive" <?php if($q_fetch['vstatus'] == 'Inactive'){ echo "checked"; } ?>><label for="inactive" class="lbl-inactive">Inactive</label></div>
+                    <label for="status" class="lbl lbl-status">Status</label><div><input type="radio" name="status" id="active" value="Active" checked><label for="active" class="lbl-active">Active</label></div><div><input type="radio" name="status" value="Inactive" id="inactive"><label for="inactive" class="lbl-inactive">Inactive</label></div>
                 </div>
                 <div class="tb-container hours-container">
                     <label for="vhours" class="lbl lbl-hours">Hours Participated</label><input type="number" name="vhours" id="vhours" class="tb" value="<?=$q_fetch['vhours'];?>">
@@ -95,7 +95,7 @@
 
             <div class="btn-container">
                 <input type="reset" value="Cancel" onclick="cancelChanges()" class="btn btn-clear">
-                <input type="submit" value="Update" name="add-volunteer" class="btn btn-add-volunteer">
+                <input type="submit" value="Add" name="add-volunteer" class="btn btn-add-volunteer">
             </div>
         </div>
         <?php

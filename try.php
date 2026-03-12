@@ -16,7 +16,7 @@ $calendar->add_event('Holiday', '2024-05-16', 7, 'green');
 	<body>
 	    <nav class="navtop">
 	    	<div>
-	    		<h1>Try VsCode Remote</h1>
+	    		<h1>Event Calendar</h1>
 	    	</div>
 	    </nav>
 		<div class="content home">

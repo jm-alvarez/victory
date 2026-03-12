@@ -40,7 +40,6 @@
                     <li class="nav-item"><a href="#events" class="nav-link">Events</a></li>
                     <li class="nav-item"><a href="#donations" class="nav-link btn-donate-now">Donate Now</a></li>
                     <li class="nav-item"><a href="#programs" class="nav-link">Programs</a></li>
-                    <li class="nav-item"><a href="#communicate" class="nav-link">Contact</a></li>
                     <div class="logout-container">
                         <a href="logout.php" class="logout">Logout</a>
                     </div>
@@ -100,20 +99,19 @@
                 </div> -->
 
                 <?php require("event_card.php");?>
+
             </div>
 
             
 
         </div>
-
-
-
+    
     </section>
 
     <!-- <div class="line-div"></div> -->
 
     <section id="donations">
-            <a href="donation.php" class="btn btn-donate" id="donate">Donate Now</a>
+            <button type="button" class="btn btn-donate" id="donate">Donate Now</button>
     </section>
 
     <!-- <div class="line-div"></div> -->
@@ -199,10 +197,7 @@
                 <div class="row-email contact">
                     <div class="email contact-icon"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="#000000" viewBox="0 0 256 256"><path d="M224,48H32a8,8,0,0,0-8,8V192a16,16,0,0,0,16,16H216a16,16,0,0,0,16-16V56A8,8,0,0,0,224,48Zm-96,85.15L52.57,64H203.43ZM98.71,128,40,181.81V74.19Zm11.84,10.85,12,11.05a8,8,0,0,0,10.82,0l12-11.05,58,53.15H52.57ZM157.29,128,216,74.18V181.82Z"></path></svg><a href="mailto:victory@email.com"  target="_blank" class="link-email">victory@email.com</a></div>
                 </div>
-
-                <button class="btn btn-inbox"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="#000000" viewBox="0 0 256 256"><path d="M216,80H184V48a16,16,0,0,0-16-16H40A16,16,0,0,0,24,48V176a8,8,0,0,0,13,6.22L72,154V184a16,16,0,0,0,16,16h93.59L219,230.22a8,8,0,0,0,5,1.78,8,8,0,0,0,8-8V96A16,16,0,0,0,216,80ZM66.55,137.78,40,159.25V48H168v88H71.58A8,8,0,0,0,66.55,137.78ZM216,207.25l-26.55-21.47a8,8,0,0,0-5-1.78H88V152h80a16,16,0,0,0,16-16V96h32Z"></path></svg><p>Inbox<p></button>
             </div>
-
             <div class="communicate-col communicate-col-2">
                 <form action="" method="post" id="form-message" class="form-message">
                     
@@ -277,15 +272,7 @@
     <iframe src="edit_profile.php" frameborder="0" id="edit-profile-frame" class="edit-profile-frame"></iframe>  
 </div>
 
-<div class="event-frame-container" id="event-frame-container">
-    <!-- <div class="frame-container">
-        <div class="event-frame-header">
-            <button class="cross" id="close-event-frame">X</button>
-            <h4>Event</h4>
-        </div>
-        <iframe src="" frameborder="0" class="event-frame" id="event-frame"></iframe>
-    </div> -->
-</div>
+
 <script>
     const navbar = document.getElementById('navbar');
 

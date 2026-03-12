@@ -1,14 +1,3 @@
-<?php
-    require("connection.php");
-
-    $q_donate = $mysqli->query("SELECT * FROM donations_tbl");
-    $amount = 0;
-    while($f_donate=$q_donate->fetch_assoc()){
-        
-    }
-
-                        
-?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -30,21 +19,7 @@
             labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'],
             datasets : [{
                 label: 'Donations',
-                // data: [1000, 2500, 500, 6000, 2000, 1250, 3690, 2400, 6800, 9000, 5400, 2500],
-                data: [
-                    <?php
-                                for($j=1; $j <= 12; $j++){
-                                    $yearNow = date("Y");
-                                    $q_month[$j] = $mysqli->query("SELECT * FROM donations_tbl WHERE year='$yearNow' AND month='$j'");
-                                    $donation_amount=0;
-                                    while($a = $q_month[$j]->fetch_assoc()){
-                                        $donation_amount += $a['donation_amount'];
-                                        
-                                    }
-                                    echo "'". $donation_amount."',";
-                                }
-                        ?>
-                ],
+                data: [1000, 2500, 500, 6000, 2000, 1250, 3690, 2400, 6800, 9000, 5400, 2500],
             }],
         },
     });

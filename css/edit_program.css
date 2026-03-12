@@ -43,7 +43,6 @@ body {
 
 header {
     width: 100%;
-    top: 0;
     height: 70px;
     background-color: var(--logo-color);
     display: flex;

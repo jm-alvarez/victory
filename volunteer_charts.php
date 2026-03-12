@@ -1,48 +1,10 @@
 <?php session_start();
     require("connection.php");
-    $q_vol = $mysqli->query("SELECT * FROM volunteers_tbl");
+    $q_vol = $mysqli->query("SELECT vid FROM volunteers_tbl");
     $v_count = 0;
-    // while($f_vol = $q_vol->fetch_assoc()){
-        
-    //     $date = $f_vol['reg_date'];
-
-    //     $volRegMonth = date("M", strtotime($date));
-    //     $regMonth = "'"."$volRegMonth"."'" . ",";
-        
-    //     $ndate = "'"."$date"."'" . ",";
-
-    //    echo "$regMonth";
-    // }
-
-    $q_jan = $mysqli->query("SELECT reg_month, reg_year FROM volunteers_tbl WHERE reg_month='1'");
-        if($q_jan){
-            $jan = 0;
-             while($f_jan = $q_jan->fetch_assoc()){
-            $jan++;
-        }   
+    while($f_vol = $q_vol->fetch_assoc()){
+        $vol[] = $f_vol;
     }
-
-    $q_feb = $mysqli->query("SELECT reg_month FROM volunteers_tbl WHERE reg_month='2'");
-        if($q_feb){
-            $jan = 0;
-             while($f_jan = $q_jan->fetch_assoc()){
-            $jan++;
-        }
-    }
-
-    for($i = 1; $i <= 12; $i++) {
-        $q_month[$i] = $mysqli->query("SELECT reg_month FROM volunteers_tbl WHERE reg_month='$i'");
-        if($q_month[$i]){
-            $month[$i] = 0;
-             while($f_month[$i] = $q_month[$i]->fetch_assoc()){
-            $month[$i]++;
-            }
-        }
-
-        $vol_stats = "'".$month[$i]."'".",";
-    }
-    
-
     // var_dump($vol)
 ?>
 
@@ -64,23 +26,11 @@
         type: 'bar',
 
         data: {
-            labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'],
+            labels: ['January', 'February', 'March', 'April', 'May'],
             datasets : [{
-                label: 'Volunteers', data: [<?php
-                        for($i = 1; $i <= 12; $i++) {
-                            $yearNow = date("Y");
-                            $q_month[$i] = $mysqli->query("SELECT reg_month FROM volunteers_tbl WHERE reg_year='$yearNow' AND reg_month='$i'");
-                            if($q_month[$i]){
-                                $month[$i] = 0;
-                                 while($f_month[$i] = $q_month[$i]->fetch_assoc()){
-                                $month[$i]++;
-                                }
-                            }
-                            
-                            echo "'".$month[$i]."'".",";
-                        }
-                    ?>
-                ],backgroundColor: ['red', 'green', 'blue', 'yellow', 'pink'],
+                label: 'Volunteers',
+                data: [1, 12, 4, 6, 3],
+                backgroundColor: ['red', 'green', 'blue', 'yellow', 'pink'],
             }],
         },
     });

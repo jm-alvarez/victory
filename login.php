@@ -55,9 +55,8 @@
                                 $r_login = $q_login -> fetch_assoc();
 
                                 if($r_login['username'] == $username and $r_login['password'] == $password){
-                                    
-                                        $_SESSION['uid'] = $r_login['uid'];
-                                        $_SESSION['session_status'] = 1;
+                                    $_SESSION['uid'] = $r_login['uid'];
+                                    $_SESSION['session_status'] = 1;
                                     
                                     if($r_login['usertype'] == 'admin'){
                                         ?>
@@ -175,13 +174,7 @@
                                                             </script>
                                                         <?php
                                                     } else {
-                                                        $ynow = date("Y");
-                                                        $m = date("m");
-                                                        $d = date("d");
-                                                        $dnow = ltrim($d, '0');
-                                                        $mnow = ltrim($m, '0');
-
-                                                        $q_vol = $mysqli->query("INSERT INTO volunteers_tbl SET vrole='Member', vstatus='Inactive', vhours='0', uid = (SELECT uid FROM users_tbl WHERE username = '$r_username'), reg_year='$ynow', reg_month='$mnow', reg_day='$dnow'");
+                                                        $q_vol = $mysqli->query("INSERT INTO volunteers_tbl SET vrole='Member', vstatus='Inactive', vhours='0', uid = (SELECT uid FROM users_tbl WHERE username = '$r_username')");
                                                         
                                                         if($q_vol){
                                                             $u_fetch = $mysqli->query("SELECT uid FROM users_tbl WHERE username = '$r_username'");
@@ -194,7 +187,7 @@
 
                                                             ?>
                                                                 <script>
-                                                                    alert("Account created successfully.");
+                                                                    alert("Account created succssfully.");
                                                                     window.location = "index.php";
                                                                 </script>
                                                             <?php

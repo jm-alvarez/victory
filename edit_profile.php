@@ -57,7 +57,7 @@
                     <label for="username" class="lbl lbl-username">Username</label><input type="text" name="username" id="username" class="tb" required value="<?=$q_fetch['username'];?>">
                 </div>
                 <div class="tb-container password-container">
-                    <label for="password" class="lbl lbl-password">Password</label><input type="text" name="password" id="password" class="tb" required value="<?=$q_fetch['password'];?>">
+                    <label for="password" class="lbl lbl-password">Password</label><input type="password" name="password" id="password" class="tb" required value="<?=$q_fetch['password'];?>">
                 </div>
                 
             </div>
@@ -91,7 +91,7 @@
                 if(!empty($fname) and !empty($lname) and !empty($email) and !empty($username) and !empty($password)){
 
                     if(!empty($profile_pic)){
-                                $q_add = $mysqli->query("UPDATE users_tbl SET username='$username', password='$password', ufname='$fname', ulname='$lname', mi='$mi.', email='$email', address='$address', bio='$bio', profile_pic='$profile_pic' WHERE uid='$id'");
+                                $q_add = $mysqli->query("UPDATE users_tbl SET username='$username', password='$password', ufname='$fname', ulname='$lname', mi='$mi.', email='$email', address='$address', bio='$bio', profile_pic='$profile_pic', usertype='$usertype' WHERE uid='$id'") and $mysqli->query("UPDATE volunteers_tbl SET vrole='$role', vstatus='$status', vhours='$vhours' WHERE uid='$id'");
                                     if(!$q_add){
                                         echo $mysqli->error;
                                         exit();
@@ -104,7 +104,7 @@
                                             <?php
                                     }
                     } else if(empty($profile_pic)){
-                        $q_add = $mysqli->query("UPDATE users_tbl SET username='$username', password='$password', ufname='$fname', ulname='$lname', mi='$mi.', email='$email', address='$address', bio='$bio' WHERE uid='$id'");
+                        $q_add = $mysqli->query("UPDATE users_tbl SET username='$username', password='$password', ufname='$fname', ulname='$lname', mi='$mi.', email='$email', address='$address', bio='$bio', usertype='$usertype' WHERE uid='$id'") and $mysqli->query("UPDATE volunteers_tbl SET vrole='$role', vstatus='$status', vhours='$vhours' WHERE uid='$id'");
                         if(!$q_add){
                             echo $mysqli->error;
                             exit();
